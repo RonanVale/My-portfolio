@@ -1,0 +1,51 @@
+title = "portfolio"
+version = "0.1.0"
+description = "Personal portfolio built with Next.js, React and Three.js (app router, TypeScript, Tailwind CSS)."
+date = "2026-06-15"
+license = "MIT"
+
+authors = ["(you) <your-email@example.com>"]
+
+[repo]
+path = "."
+
+[stack]
+framework = "Next.js"
+framework_version = "14.1.4"
+language = "TypeScript (tsx)"
+node = ">=18"
+react = "18+"
+css = "Tailwind CSS"
+threejs = true
+
+[scripts]
+build = "npm run build"
+dev = "npm run dev"
+start = "npm run start"
+
+[files]
+entry = "app/page.tsx"
+components_dir = "components/"
+public_dir = "public/"
+
+[config]
+# Sentry: configured via sentry.client.config.ts, sentry.server.config.ts, sentry.edge.config.ts
+# To enable upload of source maps during build, set this environment variable in CI:
+# SENTRY_AUTH_TOKEN="<your-token>"
+# Local builds will skip upload when token is not present.
+sentry_upload = "disabled unless SENTRY_AUTH_TOKEN is set"
+
+# Browserslist: keep caniuse-lite updated via:
+# npx update-browserslist-db@latest
+browserslist = "updated"
+
+[notes]
+- Build tested: `npm run build` succeeded on 2026-06-15 (Windows).
+- Major components: Globe (three-globe, @react-three/fiber), Lottie animations (dynamically imported), Framer Motion, Tailwind.
+- Performance: Several `<img>` usages remain; consider converting critical ones to `next/image` to improve LCP.
+- Linting: Some react-hooks warnings were addressed; a small number of non-blocking warnings remain.
+
+[contact]
+owner = "(you)"
+email = "your-email@example.com"
+
